@@ -78,3 +78,11 @@ history = model.fit(x_train, y_train,
           shuffle=True)
 
 model.save("mnist_LeNet.h5")
+
+text = history.history
+accuracy = text['accuracy'][0] * 100
+accuracy = int(accuracy)
+f= open("accuracy.txt","w+")
+f.write(str(accuracy))
+f.close()
+print("Accuracy for the model is : " , accuracy ,"%")
